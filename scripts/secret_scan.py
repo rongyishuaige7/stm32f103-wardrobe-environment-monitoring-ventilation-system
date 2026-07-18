@@ -18,8 +18,8 @@ SECRET_PATTERNS = (
     r"(?ix)\b(?:api[_-]?key|access[_-]?token|auth[_-]?token|secret|password|passwd|pwd)\b\s*[:=]\s*[\"']?(?!YOUR_|EXAMPLE|REPLACE|CHANGEME|REDACTED|\[REDACTED\]|<YOUR_)[A-Za-z0-9+/=_!@#$%^&*.-]{8,}",
 )
 PATH_PATTERNS = (r"/" + "home/", r"/" + "Users/", r"[A-Za-z]:" + r"\\Users\\")
-CONTENT_ALLOWLIST = {"scripts/secret_scan.py", "tests/test_scanner_contracts.py"}
-BANNED_CONTENT = (r"wardrobe_project\.uvguix", r"\.build_log\.htm", r"Product:\s*MDK", r"License Information")
+CONTENT_ALLOWLIST = {"scripts/secret_scan.py"}
+BANNED_CONTENT = (r"wardrobe_project" + r"\.uvguix", r"\.build_log" + r"\.htm", r"Product:" + r"\s*MDK", "License " + "Information")
 
 def allowed_text(path: Path) -> bool: return path.suffix.lower() in TEXT_SUFFIXES or path.name in EXTENSIONLESS
 

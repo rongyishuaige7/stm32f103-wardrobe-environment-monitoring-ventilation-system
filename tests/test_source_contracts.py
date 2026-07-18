@@ -28,6 +28,7 @@ class PublicSourceContracts(unittest.TestCase):
         source = text("src/main.c")
         self.assertIn('uart1_write_string(" demo_index=")', source)
         self.assertIn('make_line(line, "Idx:", demo_index, "")', source)
+        self.assertIn("fan_state = fan_get();", source)
         for stale in ("air_pct", '"Air:"', "AIR_RAW_ON_THRESHOLD", "AIR_RAW_OFF_THRESHOLD", 'fan_reason = "air"'):
             self.assertNotIn(stale, source)
 
@@ -55,6 +56,7 @@ class PublicSourceContracts(unittest.TestCase):
             self.assertNotIn(name, all_names)
         self.assertNotIn("font6x8[][6]", text("src/oled.c"))
         self.assertIn("Minimal glyph set authored", text("src/oled.c"))
+        self.assertIn("Glyph4x5", text("src/oled.c"))
 
     def test_public_source_is_exactly_allowlisted(self) -> None:
         expected = {line.strip() for line in text("docs/public-source-allowlist.txt").splitlines() if line.strip() and not line.lstrip().startswith("#")}

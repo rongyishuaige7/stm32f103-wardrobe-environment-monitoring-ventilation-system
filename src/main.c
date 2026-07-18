@@ -353,14 +353,14 @@ int main(void)
 #if ENABLE_STARTUP_FAN_TEST == 1
     uart1_write_string("BOOT: fan self test opt-in\r\n");
     fan_set(FAN_ON);
-    fan_state = FAN_ON;
+    fan_state = fan_get();
     for (startup_count = 3U; startup_count > 0U; startup_count--)
     {
         oled_show_fan_test(startup_count);
         delay_ms(1000U);
     }
     fan_set(FAN_OFF);
-    fan_state = FAN_OFF;
+    fan_state = fan_get();
 #else
     uart1_write_string("BOOT: startup fan test disabled\r\n");
 #endif
@@ -394,7 +394,7 @@ int main(void)
         if ((mq_on != 0U) || (humidity_on != 0U))
         {
             fan_set(FAN_ON);
-            fan_state = FAN_ON;
+            fan_state = fan_get();
 
             if ((mq_on != 0U) && (humidity_on != 0U))
             {
@@ -412,7 +412,7 @@ int main(void)
         else if ((mq_off != 0U) && ((dht_ok == 0U) || (humidity_off != 0U)))
         {
             fan_set(FAN_OFF);
-            fan_state = FAN_OFF;
+            fan_state = fan_get();
             fan_reason = dht_ok != 0U ? "normal" : "mq-normal";
         }
         else
