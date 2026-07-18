@@ -2,19 +2,18 @@
 
 > **教学原型 / 历史项目。** 使用 DHT11 读取温湿度、读取 MQ135 模块的原始 ADC 值、在 OLED 和 USART1 输出状态，并以带滞回的阈值逻辑形成通风控制意图。它不是空气质量仪、气体浓度仪、自动家电、量产设备或当前已真机复测的产品。
 
-## 历史素材证据（2026-07-18 发布）
+## 项目照片与资料
 
-已脱敏的历史照片。日期、脱敏处理、未公开材料和证据边界见 [MEDIA_EVIDENCE](docs/MEDIA_EVIDENCE.md)。
+这里整理了项目照片、界面截图和相关资料；文件处理说明见 [MEDIA_EVIDENCE](docs/MEDIA_EVIDENCE.md)。
 
-![历史 STM32 衣柜监测原型，2026-05-25](assets/photos/historical-prototype.jpg)
+![STM32 衣柜监测原型，2026-05-25](assets/photos/historical-prototype.jpg)
 
-历史照片、截图或 EDA 不证明当前公开提交已烧录或完成真机复测。**当前未进行真机复测。**
 
 ## 当前状态与证据边界
 
 | 层级 | 当前事实 |
 | :-- | :-- |
-| 源码来源 | 已确认：历史 Keil 工程保持只读；只迁移原创应用逻辑，不公开本机构建物、IDE 状态或许可证不完整的旧 CMSIS/启动文件。 |
+| 源码来源 | 已确认：Keil 工程保持只读；只迁移原创应用逻辑，不公开本机构建物、IDE 状态或许可证不完整的旧 CMSIS/启动文件。 |
 | 公开适配 | 固定 PlatformIO STM32Cube 构建；来源不明的完整 OLED 字体替换为本仓最小字形；修正 DHT11 位宽判定、ADC 软件触发、日志语义和 `hold` 显示分支。 |
 | 安全默认 | `ENABLE_FAN_OUTPUT=0`、`ENABLE_STARTUP_FAN_TEST=0`；默认不把 PB0/PB1 配置为输出，也不执行历史启动风扇测试。 |
 | 构建 | 固定 PlatformIO Core `6.1.19` 与 `ststm32@19.5.0`，默认及风扇精确 opt-in 两条路径由无硬件门禁编译。 |
@@ -86,7 +85,7 @@ pio run -e safe-default
 
 - Rongyi 原创的公开应用代码、最小字形、文档、脚本和接口图使用 [MIT License](LICENSE)；
 - STM32CubeF1、CMSIS、GNU Arm 工具链和 PlatformIO 在构建时独立下载，受各自条款约束，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)；
-- 未复制历史 Keil 构建输出、旧 CMSIS/设备头、启动文件或来源不明的完整 OLED 字体；
+- 未复制Keil 构建输出、旧 CMSIS/设备头、启动文件或来源不明的完整 OLED 字体；
 - 欢迎用于学习和二次开发，但不要把本仓或文档原样冒充个人课程设计、毕业设计、竞赛或商业产品成果。
 
 ## 更多资料
