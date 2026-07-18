@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+  <title id="title">STM32 wardrobe prototype source-interface boundary</title>
+  <desc id="desc">A non-schematic diagram showing DHT11, MQ analog conditioning, OLED, UART, and a disabled-by-default motor driver interface around an STM32F103.</desc>
+  <style>
+    .box{fill:#f7fafc;stroke:#334155;stroke-width:2}.mcu{fill:#e0f2fe;stroke:#0369a1;stroke-width:3}.warn{fill:#fff7ed;stroke:#c2410c;stroke-width:2}.line{stroke:#475569;stroke-width:2;fill:none}.dash{stroke:#c2410c;stroke-width:2;stroke-dasharray:8 6;fill:none}.t{font:16px sans-serif;fill:#0f172a}.s{font:13px sans-serif;fill:#334155}.w{font:13px sans-serif;fill:#9a3412}
+  </style>
+  <rect x="350" y="145" width="260" height="230" rx="18" class="mcu"/>
+  <text x="480" y="185" text-anchor="middle" class="t">STM32F103C8</text>
+  <text x="480" y="220" text-anchor="middle" class="s">PB12 DHT11 DATA</text>
+  <text x="480" y="250" text-anchor="middle" class="s">PA0 ADC1 CH0</text>
+  <text x="480" y="280" text-anchor="middle" class="s">PB6 / PB7 software I2C</text>
+  <text x="480" y="310" text-anchor="middle" class="s">PA9 / PA10 USART1</text>
+  <text x="480" y="340" text-anchor="middle" class="w">PB0 / PB1 disabled by default</text>
+  <rect x="40" y="70" width="210" height="90" rx="14" class="box"/><text x="145" y="110" text-anchor="middle" class="t">DHT11</text><text x="145" y="138" text-anchor="middle" class="s">voltage and pull-up TBD</text>
+  <rect x="40" y="210" width="250" height="110" rx="14" class="warn"/><text x="165" y="250" text-anchor="middle" class="t">MQ135 module AO</text><text x="165" y="278" text-anchor="middle" class="w">verify maximum voltage first</text><text x="165" y="300" text-anchor="middle" class="w">divider / buffer if required</text>
+  <rect x="40" y="380" width="210" height="90" rx="14" class="box"/><text x="145" y="420" text-anchor="middle" class="t">128 x 64 OLED</text><text x="145" y="448" text-anchor="middle" class="s">address / voltage TBD</text>
+  <rect x="710" y="65" width="210" height="90" rx="14" class="box"/><text x="815" y="105" text-anchor="middle" class="t">3.3 V USB-TTL</text><text x="815" y="133" text-anchor="middle" class="s">local logs only</text>
+  <rect x="690" y="205" width="240" height="120" rx="14" class="warn"/><text x="810" y="245" text-anchor="middle" class="t">Low-voltage motor driver</text><text x="810" y="275" text-anchor="middle" class="w">exact part and protection TBD</text><text x="810" y="300" text-anchor="middle" class="w">never connect motor to GPIO</text>
+  <rect x="730" y="385" width="170" height="80" rx="14" class="warn"/><text x="815" y="420" text-anchor="middle" class="t">Fan + supply</text><text x="815" y="445" text-anchor="middle" class="w">not retested</text>
+  <path d="M250 115 L350 215" class="line"/><path d="M290 265 L350 250" class="line"/><path d="M250 425 L350 280" class="line"/><path d="M610 310 L710 110" class="line"/><path d="M610 340 L690 265" class="dash"/><path d="M810 325 L815 385" class="dash"/>
+  <text x="480" y="500" text-anchor="middle" class="w">Interface boundary only - not a schematic, verified wiring, or authorization to energize a fan.</text>
+</svg>

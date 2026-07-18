@@ -1,0 +1,12 @@
+item,quantity,role,required_for_source_interface,verification_status,notes
+STM32F103C8 development board,1,MCU target,yes,not_retested,Exact board and crystal not confirmed
+ST-Link compatible programmer,1,SWD programming,yes,not_retested,Use correct target voltage and common ground
+DHT11 sensor or module,1,Temperature and humidity input,yes,not_retested,External pull-up may be required
+MQ135 sensor module,1,Raw analog demonstration input,yes,not_retested,Module AO voltage and warm-up must be confirmed
+128x64 I2C OLED module,1,Local display,yes,not_retested,Controller address voltage and pull-ups unconfirmed
+3.3 V USB-TTL adapter,1,USART1 log observation,no,not_retested,Do not inject 5 V logic
+Low-voltage motor driver,1,Fan power stage,no,not_retested,Exact part truth table and protection required
+Low-voltage fan,1,Ventilation load,no,not_retested,Never connect directly to GPIO
+Separate protected fan supply,1,Motor power,no,not_retested,Voltage and current must match fan and driver
+Pull-up and divider components,as designed,Signal conditioning,no,not_retested,Values require exact module review
+Breadboard wiring and decoupling,as needed,Low-voltage prototype,no,not_retested,Not a substitute for reviewed schematic

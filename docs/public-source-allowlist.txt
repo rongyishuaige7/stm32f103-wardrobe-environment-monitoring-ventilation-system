@@ -1,0 +1,16 @@
+# Exact firmware/config files allowed in this public candidate.
+platformio.ini
+include/app_config.h
+include/delay.h
+include/dht11.h
+include/fan.h
+include/mq135.h
+include/oled.h
+include/uart.h
+src/delay.c
+src/dht11.c
+src/fan.c
+src/main.c
+src/mq135.c
+src/oled.c
+src/uart.c
