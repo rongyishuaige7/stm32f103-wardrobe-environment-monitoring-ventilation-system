@@ -1,6 +1,6 @@
 # Exact non-Git file inventory for publication. Update deliberately.
-.github/workflows/validate.yml
 .gitattributes
+.github/workflows/validate.yml
 .gitignore
 .markdownlint-cli2.jsonc
 HARDWARE.md
@@ -8,8 +8,10 @@ LICENSE
 README.md
 SECURITY.md
 THIRD_PARTY_NOTICES.md
+assets/photos/historical-prototype.jpg
 docs/GITHUB_METADATA.md
 docs/HARDWARE_LAB_CARD.md
+docs/MEDIA_EVIDENCE.md
 docs/PROJECT_STATUS.md
 docs/SOURCE_PROVENANCE.md
 docs/VERIFICATION.md

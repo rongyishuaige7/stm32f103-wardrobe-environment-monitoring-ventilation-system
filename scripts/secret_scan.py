@@ -5,6 +5,7 @@ import argparse
 import re
 import sys
 from pathlib import Path
+from PIL import Image
 DEFAULT_ROOT = Path(__file__).resolve().parents[1]
 MAX_BYTES = 5 * 1024 * 1024
 BANNED_PARTS = {".git", ".pio", ".venv", "venv", "__pycache__", ".vscode", ".idea", ".vs", "Objects", "Listings", "DebugConfig", "build", "dist", "release"}
@@ -20,6 +21,7 @@ SECRET_PATTERNS = (
 PATH_PATTERNS = (r"/" + "home/", r"/" + "Users/", r"[A-Za-z]:" + r"\\Users\\")
 CONTENT_ALLOWLIST = {"scripts/secret_scan.py"}
 BANNED_CONTENT = (r"wardrobe_project" + r"\.uvguix", r"\.build_log" + r"\.htm", r"Product:" + r"\s*MDK", "License " + "Information")
+PUBLIC_IMAGES = {"assets/photos/historical-prototype.jpg"}
 
 def allowed_text(path: Path) -> bool: return path.suffix.lower() in TEXT_SUFFIXES or path.name in EXTENSIONLESS
 
@@ -33,6 +35,15 @@ def scan(root: Path) -> list[str]:
         if not path.is_file(): continue
         if path.name in FORBIDDEN_NAMES or path.name.startswith(".env.") or path.name.startswith("config.local.") or path.name.startswith("wardrobe_project.uvguix."):
             failures.append(f"forbidden local/config filename: {rel}"); continue
+        if rel.as_posix() in PUBLIC_IMAGES:
+            try:
+                with Image.open(path) as image: image.verify()
+                with Image.open(path) as image:
+                    allowed_info = {"jfif", "jfif_version", "jfif_unit", "jfif_density", "progressive", "progression", "transparency"}
+                    if len(image.getexif()) != 0: failures.append(f"public image contains EXIF metadata: {rel}")
+                    if set(image.info) - allowed_info: failures.append(f"public image contains unexpected metadata: {rel}")
+            except OSError as error: failures.append(f"invalid public image {rel}: {error}")
+            continue
         if path.suffix.lower() in BANNED_SUFFIXES: failures.append(f"forbidden artifact: {rel}"); continue
         if not allowed_text(path): failures.append(f"unallowlisted file type: {rel}"); continue
         if path.stat().st_size > MAX_BYTES: failures.append(f"file exceeds publication limit: {rel}"); continue

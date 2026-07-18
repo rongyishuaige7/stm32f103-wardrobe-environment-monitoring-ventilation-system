@@ -22,3 +22,9 @@
 - SVG 是接口边界图，不是原理图、PCB 或已验证实物接线；
 - opt-in 编译成功不授权连接电机或证明驱动安全；
 - 本仓不是家电、消费电子、室内空气质量仪、量产设计或生产系统。
+
+## Historical media and EDA added on 2026-07-18
+
+sanitized historical photo(s). See [MEDIA_EVIDENCE](MEDIA_EVIDENCE.md) for dates, sanitization, omissions, and evidence limits.
+
+This publication update adds historical evidence only. Current hardware re-test not run.
