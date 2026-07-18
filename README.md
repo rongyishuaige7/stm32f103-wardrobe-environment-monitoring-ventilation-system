@@ -8,7 +8,6 @@
 
 ![STM32 衣柜监测原型，2026-05-25](assets/photos/historical-prototype.jpg)
 
-
 ## 当前状态与证据边界
 
 | 层级 | 当前事实 |
