@@ -2,13 +2,13 @@
 
 > **教学原型 / 历史项目。** 使用 DHT11 读取温湿度、读取 MQ135 模块的原始 ADC 值、在 OLED 和 USART1 输出状态，并以带滞回的阈值逻辑形成通风控制意图。它不是空气质量仪、气体浓度仪、自动家电、量产设备或当前已真机复测的产品。
 
-## Historical material evidence (2026-07-18 publication)
+## 历史素材证据（2026-07-18 发布）
 
-sanitized historical photo(s). See [MEDIA_EVIDENCE](docs/MEDIA_EVIDENCE.md) for dates, sanitization, omissions, and evidence limits.
+已脱敏的历史照片。日期、脱敏处理、未公开材料和证据边界见 [MEDIA_EVIDENCE](docs/MEDIA_EVIDENCE.md)。
 
-![Historical STM32 wardrobe-monitor prototype, 2026-05-25](assets/photos/historical-prototype.jpg)
+![历史 STM32 衣柜监测原型，2026-05-25](assets/photos/historical-prototype.jpg)
 
-Historical media/EDA do not prove that the current public commit was flashed or re-tested on hardware. **Current hardware re-test not run.**
+历史照片、截图或 EDA 不证明当前公开提交已烧录或完成真机复测。**当前未进行真机复测。**
 
 ## 当前状态与证据边界
 
