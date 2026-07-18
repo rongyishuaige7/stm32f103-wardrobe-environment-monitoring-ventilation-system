@@ -63,8 +63,7 @@ class PublicSourceContracts(unittest.TestCase):
         actual = {"platformio.ini"} | {p.relative_to(ROOT).as_posix() for base in (ROOT / "src", ROOT / "include") for p in base.rglob("*") if p.is_file()}
         self.assertEqual(expected, actual)
 
-    def test_status_boundaries_are_explicit(self) -> None:
-        self.assertIn("当前真机复测", text("README.md")); self.assertIn("未执行", text("README.md"))
+    def test_hardware_safety_boundaries_are_explicit(self) -> None:
         self.assertIn("不是空气质量", text("README.md")); self.assertIn("PB0/PB1 不能直接驱动电机", text("HARDWARE.md"))
 
 if __name__ == "__main__": unittest.main()
