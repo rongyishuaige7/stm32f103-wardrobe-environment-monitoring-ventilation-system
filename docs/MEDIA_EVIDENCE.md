@@ -13,7 +13,7 @@
 
 | 公开路径 | 历史日期 / 来源日期 | 脱敏处理 | 有限证据边界 |
 | :-- | :-- | :-- | :-- |
-| `assets/photos/historical-prototype.jpg` | 2026-05-25                    | 已移除 EXIF/GPS 及其他图片元数据；从副本缩放处理 | 历史衣柜监测原型照片。 |
+| `assets/photos/historical-prototype.jpg` | 2026-05-25 | 已移除 EXIF/GPS 及其他图片元数据；从副本缩放处理 | 历史衣柜监测原型照片。 |
 
 ## 拒绝或未公开的材料
 
