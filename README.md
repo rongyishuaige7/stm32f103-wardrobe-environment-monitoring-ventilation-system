@@ -1,25 +1,12 @@
 # 基于 STM32F103 的衣柜环境监测与自动通风控制系统
 
-> **教学原型 / 历史项目。** 使用 DHT11 读取温湿度、读取 MQ135 模块的原始 ADC 值、在 OLED 和 USART1 输出状态，并以带滞回的阈值逻辑形成通风控制意图。它不是空气质量仪、气体浓度仪、自动家电、量产设备或当前已真机复测的产品。
+> **教学原型 / 历史项目。** 使用 DHT11 读取温湿度、读取 MQ135 模块的原始 ADC 值、在 OLED 和 USART1 输出状态，并以带滞回的阈值逻辑形成通风控制意图。它不是空气质量仪、气体浓度仪、自动家电或量产设备。
 
 ## 项目照片与资料
 
 这里整理了项目照片、界面截图和相关资料；文件处理说明见 [MEDIA_EVIDENCE](docs/MEDIA_EVIDENCE.md)。
 
 ![STM32 衣柜监测原型，2026-05-25](assets/photos/historical-prototype.jpg)
-
-## 当前状态与证据边界
-
-| 层级 | 当前事实 |
-| :-- | :-- |
-| 源码来源 | 已确认：Keil 工程保持只读；只迁移原创应用逻辑，不公开本机构建物、IDE 状态或许可证不完整的旧 CMSIS/启动文件。 |
-| 公开适配 | 固定 PlatformIO STM32Cube 构建；来源不明的完整 OLED 字体替换为本仓最小字形；修正 DHT11 位宽判定、ADC 软件触发、日志语义和 `hold` 显示分支。 |
-| 安全默认 | `ENABLE_FAN_OUTPUT=0`、`ENABLE_STARTUP_FAN_TEST=0`；默认不把 PB0/PB1 配置为输出，也不执行历史启动风扇测试。 |
-| 构建 | 固定 PlatformIO Core `6.1.19` 与 `ststm32@19.5.0`，默认及风扇精确 opt-in 两条路径由无硬件门禁编译。 |
-| 当前真机复测 | **未执行。** 当前公开候选没有重新烧录，也没有联调 STM32、DHT11、MQ135、OLED、UART、驱动级或风扇。 |
-| 媒体与 EDA | 当前没有公开实物照片、演示视频、原理图、PCB、Gerber 或制造文件。 |
-
-当前只确认**来源边界、公开文件、源码契约与隔离构建**。构建通过不能证明读数准确、OLED 点亮、风扇动作、接线正确、供电安全或系统稳定。
 
 ## 功能
 
@@ -93,7 +80,7 @@ pio run -e safe-default
 - [BOM](hardware/BOM.csv)
 - [接线边界说明](hardware/wiring.md)
 - [来源与公开适配](docs/SOURCE_PROVENANCE.md)
-- [项目状态](docs/PROJECT_STATUS.md)
+-
 - [验证说明](docs/VERIFICATION.md)
 - [安全说明](SECURITY.md)
 - [Hardware Lab](https://github.com/rongyishuaige7/hardware-lab)
