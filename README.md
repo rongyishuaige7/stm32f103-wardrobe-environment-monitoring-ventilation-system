@@ -10,7 +10,6 @@ sanitized historical photo(s). See [MEDIA_EVIDENCE](docs/MEDIA_EVIDENCE.md) for 
 
 Historical media/EDA do not prove that the current public commit was flashed or re-tested on hardware. **Current hardware re-test not run.**
 
-
 ## 当前状态与证据边界
 
 | 层级 | 当前事实 |

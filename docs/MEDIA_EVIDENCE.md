@@ -11,9 +11,9 @@
 
 ## Published derivatives
 
-| Public path | Historical date / source date | Sanitization | Narrow evidence boundary |
-|:--|:--|:--|:--|
-| `assets/photos/historical-prototype.jpg` | 2026-05-25 | EXIF/GPS and other image metadata removed; resized from a copy | Historical wardrobe-monitor prototype photo. |
+| Public path                              | Historical date / source date | Sanitization                                                   | Narrow evidence boundary                     |
+| :--------------------------------------- | :---------------------------- | :------------------------------------------------------------- | :------------------------------------------- |
+| `assets/photos/historical-prototype.jpg` | 2026-05-25                    | EXIF/GPS and other image metadata removed; resized from a copy | Historical wardrobe-monitor prototype photo. |
 
 ## Rejected or omitted material
 
