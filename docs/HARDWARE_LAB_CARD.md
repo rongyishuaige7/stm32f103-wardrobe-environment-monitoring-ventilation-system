@@ -4,7 +4,7 @@
 name: 基于 STM32F103 的衣柜环境监测与自动通风控制系统
 platform: STM32F103 · C · PlatformIO · STM32Cube · DHT11 · MQ135 · OLED
 summary: 读取温湿度和 MQ135 模块原始 ADC 值，通过 OLED/USART1 展示，并用带滞回阈值形成通风控制意图的低压教学原型。
-status: 来源边界已确认 · 安全默认与公开门禁已建立 · exact-HEAD CI 待实际绑定 · 当前整机尚未重新真机复测
+status: 来源边界已确认 · 安全默认、公开门禁与 GitHub Actions 已建立 · 最新候选仍须 exact-HEAD CI 成功 · 当前整机尚未重新真机复测
 media_scope: 当前没有实物照片、演示视频、原理图、PCB、EDA、Gerber 或制造文件；只公开 BOM、接口边界图、来源和验证说明。
 known_boundaries:
   - MQ 原始 ADC 与 demo_index 不是空气质量或气体浓度，阈值不是健康标准。

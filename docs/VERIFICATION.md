@@ -46,11 +46,11 @@ fan-output-opt-in compile path: PASS
 构建资源占用：
 
 ```text
-safe-default:       RAM 1,072 / 20,480 bytes (5.2%), Flash 4,592 / 65,536 bytes (7.0%)
-fan-output-opt-in:  RAM 1,072 / 20,480 bytes (5.2%), Flash 4,776 / 65,536 bytes (7.3%)
+safe-default:       RAM 1,072 / 20,480 bytes (5.2%), Flash 4,688 / 65,536 bytes (7.2%)
+fan-output-opt-in:  RAM 1,072 / 20,480 bytes (5.2%), Flash 4,884 / 65,536 bytes (7.5%)
 ```
 
-这些数字只是编译器对构建目标的静态结果，不证明实物 Flash/RAM 容量、运行时栈、烧录、传感器、显示或风扇行为。GitHub exact-HEAD Actions 仍要在推送后实际回读。
+这些数字只是编译器对构建目标的静态结果，不证明实物 Flash/RAM 容量、运行时栈、烧录、传感器、显示或风扇行为。GitHub Actions 工作流已建立；任何 `main` 变更都必须以该最新候选提交的 exact-HEAD 成功运行作为公开发布门禁。
 
 ## 当前真机复测清单（尚未执行）
 
