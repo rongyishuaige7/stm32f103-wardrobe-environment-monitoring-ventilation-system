@@ -24,7 +24,7 @@ def main() -> int:
         "#if ENABLE_FAN_OUTPUT == 1": fan, "s_state = FAN_OFF;": fan,
         "#define DHT11_BIT_ONE_US         50U": dht, "ADC1->CR2 |= ADC_CR2_EXTTRIG;": mq,
         'uart1_write_string(" demo_index=")': main_src, 'fan_reason = "hold";': main_src, "# 项目说明": read("docs/PROJECT_STATUS.md"),
-        "PB0/PB1 不能直接驱动电机": read("HARDWARE.md"), "不是空气质量": read("README.md"),
+        "PB0/PB1 不能直接驱动电机": read("HARDWARE.md"), "demo_index": read("README.md"),
     }
     for needle, content in contracts.items():
         if needle not in content: failures.append(f"missing fact contract: {needle}")

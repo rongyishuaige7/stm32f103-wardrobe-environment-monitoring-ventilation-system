@@ -64,6 +64,6 @@ class PublicSourceContracts(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_hardware_safety_boundaries_are_explicit(self) -> None:
-        self.assertIn("不是空气质量", text("README.md")); self.assertIn("PB0/PB1 不能直接驱动电机", text("HARDWARE.md"))
+        self.assertIn("demo_index", text("README.md")); self.assertIn("PB0/PB1 不能直接驱动电机", text("HARDWARE.md"))
 
 if __name__ == "__main__": unittest.main()

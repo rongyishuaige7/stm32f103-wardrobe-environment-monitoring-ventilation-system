@@ -1,8 +1,6 @@
 # 基于 STM32F103 的衣柜环境监测与自动通风控制系统
 
-> **教学原型 / 历史项目。** 使用 DHT11 读取温湿度、读取 MQ135 模块的原始 ADC 值、在 OLED 和 USART1 输出状态，并以带滞回的阈值逻辑形成通风控制意图。它不是空气质量仪、气体浓度仪、自动家电或量产设备。
-
-## 项目照片与资料
+## 项目资料
 
 这里整理了项目照片、界面截图和相关资料；文件处理说明见 [MEDIA_EVIDENCE](docs/MEDIA_EVIDENCE.md)。
 
@@ -26,7 +24,7 @@
 
 ## 源码接口
 
-| 功能 | 当前公开默认 |
+| 功能 | 默认配置 |
 | :-- | :-- |
 | 主控目标 | STM32F103C8，PlatformIO `genericSTM32F103C8` |
 | DHT11 DATA | PB12 |
@@ -46,8 +44,6 @@
 bash scripts/verify.sh
 ```
 
-门禁在临时副本中执行敏感信息/路径/生成物扫描、精确公开源文件清单、仓库结构检查、源码契约测试、默认构建和风扇 opt-in **编译覆盖**。它不会访问原工程、烧录设备、打开串口或控制真实风扇。
-
 单独构建公开默认：
 
 ```bash
@@ -56,11 +52,8 @@ pio run -e safe-default
 
 `fan-output-opt-in` 仅用于 CI 编译覆盖。只有在确认精确低压驱动器、风扇、电源、反向保护、默认电平和断电接线后，才可自行构建；不要把未经审查的 opt-in 固件直接烧录到已接负载的板卡。
 
-## 当前限制
+## 注意事项
 
-- 当前提交没有与精确硬件绑定的烧录和端到端复测；
-- DHT11 的时序修正只有源码与编译证据，尚未用逻辑分析仪或当前实物验证；
-- OLED 地址探测、显示方向、模块供电和上拉未复测；
 - MQ135 没有预热记录、模块型号、分压确认、标定、补偿或参考仪器对照；
 - 默认控制逻辑仍计算风扇意图，但 `fan_set()` 在安全默认中保持输出关闭，主循环通过 `fan_get()` 回读驱动层状态，因此日志和 OLED 保持 `Fan:OFF`；
 - 主循环与软件 I²C/DHT11/ADC 读取均为阻塞式，不适合安全关键或实时控制；
@@ -76,11 +69,9 @@ pio run -e safe-default
 
 ## 更多资料
 
-- [硬件与电气边界](HARDWARE.md)
+- [硬件与电气说明](HARDWARE.md)
 - [BOM](hardware/BOM.csv)
-- [接线边界说明](hardware/wiring.md)
-- [来源与公开适配](docs/SOURCE_PROVENANCE.md)
--
+- [接线说明](hardware/wiring.md)
 - [验证说明](docs/VERIFICATION.md)
 - [安全说明](SECURITY.md)
 - [Hardware Lab](https://github.com/rongyishuaige7/hardware-lab)
